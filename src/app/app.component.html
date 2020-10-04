@@ -1,0 +1,48 @@
+
+<div class="csv-file-chooser-section">
+  <h1>CSV Parser: zadanie rekrutacyjne #2</h1>
+  <input type="file" #fileImportInput name="Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
+    accept=".csv" />
+
+</div>
+
+
+<div class="csv-result-table">
+
+  <ul>
+
+    <li *ngFor="let csvData of csvRecords;let i = index;">
+      {{csvData.Layer1}}
+      <ul>
+        <div *ngIf="csvData.Layer2 !==NULL">
+          <li>
+            {{csvData.Layer2}}
+          </li>
+        </div>
+        <ul>
+          <div *ngIf="csvData.Layer3 !==NULL">
+            <li>
+              {{csvData.Layer3}}
+            </li>
+          </div>
+
+          <ul>
+            <div *ngIf="csvData.Layer4 !==NULL">
+              <li>
+                {{csvData.Layer4}}
+              </li>
+            </div>
+
+            <ul>
+              <div *ngIf="csvData.Layer5 !==NULL">
+                <li>
+                  {{csvData.Layer5}}
+                </li>
+              </div>
+            </ul>
+          </ul>
+        </ul>
+      </ul>
+    </li>
+  </ul>
+</div>
